@@ -17,7 +17,7 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
 });
 
 Route::middleware('guest')->group(function () {
@@ -32,7 +32,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout')->middl
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [StoreController::class, 'create'])->name('dashboard');
+    Route::get('/home', [StoreController::class, 'create'])->name('dashboard');
     Route::post('/stores', [StoreController::class, 'store'])->name('stores.store');
 });
 

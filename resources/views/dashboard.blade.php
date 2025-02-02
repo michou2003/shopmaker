@@ -26,7 +26,7 @@
             <ul class="space-y-2">
                 @foreach(auth()->user()->stores as $store)
                     <li class="bg-gray-50 p-4 rounded">
-                        <a href="http://{{ $store->subdomain }}.domain.xxx" class="text-blue-500 hover:text-blue-600" target="_blank">
+                        <a href="http://{{ $store->subdomain }}.{{env('APP_DOMAIN')}}" class="text-blue-500 hover:text-blue-600" target="_blank">
                             {{ $store->name }}
                         </a>
                     </li>
